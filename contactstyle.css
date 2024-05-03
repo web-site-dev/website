@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu:wght@300;700&display=swap');
+
+/* Base Reset and Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Background Styling */
+body {
+    font-family: 'Ubuntu', sans-serif; /* Consistent font style */
+    color: #FFFFFF; /* White text for contrast */
+    background-color: #000000; /* Consistent black background */
+    text-align: center; /* Center alignment for all text */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%; /* Full width */
+    background-color: #000000; /* Black background for consistency */
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 3rem;
+    position: fixed; /* Fixed at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* High z-index to stay on top */
+}
+
+/* Navbar Branding */
+.navbar-brand p {
+    font-weight: 500;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: rgb(66, 1, 1); /* Custom color for brand */
+}
+
+/* Navigation List Styling */
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    color: #E1D9D1; /* Subtle gray text color for readability */
+}
+
+/* Navigation Link Styling */
+.nav-list li a {
+    padding: 10px 15px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #FFFFFF; /* White links for contrast */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition effects */
+}
+
+/* Hover and Focus Styles */
+.nav-list li a:hover, .nav-list li a:focus {
+    background-color: #505050; /* Light grey for hover */
+    border-radius: 5px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    background: #1A1A1A; /* Dark background for form */
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8); /* Shadow for depth */
+    padding: 20px;
+    margin-top: 80px; /* Space from navbar */
+}
+
+/* Form Header Styling */
+.head {
+    background: #000000; /* Consistent with navbar */
+    color: #FFFFFF; /* White text */
+    padding: 20px;
+    width: 100%; /* Full width of form */
+}
+
+/* Label Styling */
+label {
+    text-align: left;
+    margin: 10px 0;
+}
+
+/* Input and Textarea Styling */
+input, textarea {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    background: #333333; /* Dark grey background */
+    color: #FFFFFF; /* White text for readability */
+    border: 2px solid transparent;
+}
+
+input:focus, textarea:focus {
+    border-color: #0084FF; /* Blue border on focus */
+}
+
+textarea {
+    resize: none; /* Disable resizing for consistency */
+}
+
+/* Button Styling */
+button {
+    margin-top: 10px;
+    background: #0084FF; /* Blue background */
+    padding: 10px 20px;
+    border-radius: 50px; /* Rounded edges */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0066CC; /* Darker blue on hover */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        padding: 1rem 2rem; /* Adjusted padding */
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        display: none; /* Initially hidden */
+    }
+
+    .nav-list li a {
+        text-align: center; /* Center links */
+        padding: 15px 20px; /* Increased padding for touch targets */
+    }
+
+    form {
+        width: 90%; /* Smaller form for smaller screens */
+        margin-top: 20px; /* Reduced space from navbar due to stacking */
+    }
+
+    /* Adding a toggle functionality for the navigation list */
+    .nav-toggle:checked + .nav-toggle-label + .nav-list {
+        display: flex; /* Display the navigation list when toggled */
+    }
+
+    /* Styling for the toggle label (hamburger menu) */
+    .nav-toggle-label {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        z-index: 2000;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span {
+        background-color: transparent;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span::before {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span::after {
+        transform: rotate(-45deg) translate(7px, -8px);
+    }
+}
+
+

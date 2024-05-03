@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu:wght@300;700&display=swap');
+
+/* Base Reset and Font Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif; /* Primary font for modern look */
+}
+
+/* Fullscreen Background Image Setup */
+body {
+    background-color: #000000;
+    background-image: url('AAIBUZZHUB.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 0px; /* Prevents navbar from overlapping content */
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #000000; 
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 3rem;
+    width: 100%;
+    position: relative; /* Stays relative to layout flow */
+    z-index: 1000; /* Ensures navbar is always on top */
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+/* Navbar Brand Styling */
+.navbar-brand p {
+    font-weight: 500;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: rgb(66, 1, 1); /* Eye-catching custom color */
+}
+
+/* Navigation List Styling */
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    color: #E1D9D1; /* Subtle gray text color for readability */
+}
+
+/* Navigation Links Styling */
+.nav-list li a {
+    padding: 10px 15px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: inherit; /* Inherits color from parent */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions for hover effects */
+}
+
+/* Hover and Focus Styles for Navigation Links */
+.nav-list li a:hover, .nav-list li a:focus {
+    background-color: gray;
+    color: #F1FAEE;
+    border-radius: 5px; /* Rounded corners for a softer look */
+}
+
+/* Hamburger Menu Styling */
+.nav-toggle {
+    display: none; /* Hidden by default */
+}
+
+/* Hamburger Icon Styling */
+.nav-toggle-label {
+    display: none; /* Hidden in desktop view */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 2000; /* Ensures it's clickable */
+}
+
+.nav-toggle-label span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin-bottom: 5px;
+    transition: all 0.3s;
+}
+
+/* Mobile Specific Adjustments */
+/* Mobile Specific Adjustments */
+@media (max-width: 768px) {
+    .nav-toggle-label {
+        display: block; /* Show hamburger menu in mobile view */
+    }
+
+    .nav-list {
+        display: none; /* Initially hidden */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #000000; /* Matching navbar color */
+        z-index: 1000; /* Proper layering */
+        padding-top: 10px; /* Add padding top to separate from the navbar */
+        transition: transform 0.3s ease-in-out; /* Smooth transition for visibility */
+        transform: translateY(-100%); /* Initially off-screen */
+    }
+
+    .nav-toggle:checked + .nav-list {
+        transform: translateY(0); /* Show navigation list when toggled */
+    }
+
+    .nav-list li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-list li a {
+        padding: 10px 20px; /* Larger target area for better touch accessibility */
+        display: block; /* Ensure full width clickable area */
+        color: #E1D9D1; /* Text color for navigation links */
+        transition: background-color 0.3s, color 0.3s; /* Smooth transitions for hover effects */
+    }
+
+    .nav-list li a:hover, .nav-list li a:focus {
+        background-color: gray;
+        color: #F1FAEE;
+        border-radius: 5px; /* Rounded corners for a softer look */
+    }
+}
+
+
+/* Banner Section Styling */
+.site-banner {
+    background-image: url('banner-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    
+}
+
+/* Banner Content Styling */
+.banner-content h1 {
+    font-size: 3.4rem;
+    font-weight: 500;
+    margin-top: 90px;
+    margin-bottom: 20px;
+}
+
+.banner-content p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Button Styling for Explore */
+.btn-explore {
+    background-color: white;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Button Hover and Focus Effects */
+.btn-explore:hover, .btn-explore:focus {
+    transform: scale(1.05);
+}
+
+/* General Element Styling */
+.ge {
+    color: grey;
+}
+/* Enhanced Hamburger Menu Icon Animation */
+.nav-toggle:checked + .nav-toggle-label span {
+    background-color: transparent; /* Hide middle bar */
+}
+
+.nav-toggle:checked + .nav-toggle-label span::before,
+.nav-toggle:checked + .nav-toggle-label span::after {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.nav-toggle:checked + .nav-toggle-label span::after {
+    transform: rotate(-45deg);
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+    top: -8px; /* Adjust position */
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: transform 0.3s, top 0.3s;
+}
+
+.nav-toggle-label span::after {
+    top: 8px;
+}
+
+/* Adjustments for Animated Navigation Display */
+.nav-list.active {
+    display: flex; /* Ensures the list is displayed */
+    transform: translateY(0%); /* Moves menu into view */
+    transition: transform 0.5s ease-out; /* Smooth and slightly slower transition */
+}

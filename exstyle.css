@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu:wght@300;700&display=swap');
+
+/* Base Reset and Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif; /* Consistent font style */
+    color: #F1FAEE; /* Light grey text for better contrast */
+}
+
+body {
+    background-color: #000000; /* Consistent black background for the entire site */
+}
+
+/* Navbar Branding */
+.navbar-brand p {
+    font-weight: 500;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: rgb(66, 1, 1); /* Custom color for branding */
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #000000; /* Maintains a consistent style */
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 3rem;
+    position: fixed; /* Keeps navbar at the top on scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures navbar is above other content */
+}
+
+/* Navigation List Styling */
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+/* Navigation Link Styling */
+.nav-list li a {
+    padding: 10px 15px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: inherit; /* Inherits color from nav-list */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.nav-list li a:hover, .nav-list li a:focus {
+    background-color: gray; /* Subtle hover effect */
+    color: #F1FAEE; /* Ensures text is still readable */
+    border-radius: 5px; /* Rounded corners for a modern look */
+}
+
+/* Explore Banner Styling */
+.explore-banner {
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* Section Headers */
+.head1 {
+    font-size: 30px; /* Large and bold for impact */
+    font-weight: 500;
+}
+
+/* Paragraph Styling */
+.p1 {
+    color: gray; /* Subtle color for less emphasis */
+    font-weight: 300;
+}
+
+/* Container for Flex Items */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+/* Individual Boxes */
+.box {
+    width: 275px;
+    height: 275px;
+    background: #000;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Image Styling */
+.imgBx img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images are properly scaled */
+}
+
+/* Content Overlay */
+.content {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    color: white;
+    padding: 10px;
+    transition: 0.5s;
+    transform: translateY(100%); /* Initially hidden below the box */
+}
+
+.box:hover .content {
+    transform: translateY(0); /* Slide up to reveal on hover */
+}
+
+/* Title Styling Inside Boxes */
+.box-title {
+    text-align: center;
+    font-size: 1rem;
+    color: #F1FAEE;
+    margin-top: 5px;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem 2rem; /* Increased padding in mobile view */
+    }
+
+    .nav-list {
+        display: none; /* Hide by default, show on toggle */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust position under navbar */
+        background-color: #000000; /* Consistent with navbar color */
+    }
+
+    .nav-toggle:checked + .nav-list {
+        display: flex; /* Show nav list when toggled */
+    }
+
+    .nav-list li {
+        text-align: center; /* Center-align links for better appearance */
+        padding: 10px; /* Increased padding for easier touch */
+    }
+
+    .nav-list li a {
+        display: block; /* Full-width links for easier touch */
+    }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIBuzzHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <p>AIBuzzHub</p>
+        </div>
+        <!-- Hamburger menu toggle -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" hidden>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html" class="exp">Explore</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <header class="site-banner">
+        <div class="banner-content">
+            <h1>Pioneering AI Discoveries</h1>
+            <p class="ge">Your Gateway to Future Technologies.</p>
+            <a href="explore.html" class="btn-explore">Start Exploring</a>
+        </div>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
+
+    // Toggle the navigation menu when the hamburger icon is clicked
+    navToggle.addEventListener('click', function () {
+        navList.classList.toggle('active');
+        
+    });
+});
+
+    </script>
+</body>
+</html>

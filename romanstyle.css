@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu:wght@300;700&display=swap');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif; /* Use Ubuntu as the primary font */
+    color: #F1FAEE; /* Light grey color for text across all base elements */
+}
+
+body {
+    background-color: #000000; /* Consistent black background */
+    padding-top: 0px; /* No initial top padding to prevent content hiding behind the navbar */
+}
+
+.navbar {
+    background-color: #000000; /* Consistent black navbar */
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 3rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: static; /* Updated to static */
+    z-index: 1000; /* Ensures navbar is above other content */
+}
+
+
+.navbar-brand p {
+    font-weight: 500;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: rgb(66, 1, 1); /* Custom color for brand highlights */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    color: #E1D9D1; /* Subtle grey text color for readability */
+}
+
+.nav-list li a {
+    padding: 10px 15px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: inherit; /* Inherits the color from parent */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.nav-list li a:hover, .nav-list li a:focus {
+    background-color: gray; /* Darker background on hover/focus */
+    border-radius: 5px; /* Rounded corners for a polished look */
+}
+
+/* Main Content Container */
+.container {
+    width: 80%;
+    margin: 20px auto; /* Center container */
+    background: #333; /* Darker background for the container */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+h1, h2 {
+    color: #F1FAEE; /* Ensures headers are brightly colored */
+}
+
+p, li {
+    line-height: 1.6;
+    margin-bottom: 20px; /* Spacing for readability */
+}
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.8em;
+    color: #999; /* Light grey for less emphasis */
+}
+
+/* Link Styling */
+a {
+    color: #3498DB; /* Bright blue for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        padding-top: 50px; /* Additional top padding to accommodate fixed navbar */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack items vertically in the navbar */
+        padding: 1rem; /* Uniform padding */
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%; /* Full width */
+        padding: 0;
+        display: none; /* Initially hidden */
+    }
+
+    .nav-list li a {
+        text-align: center; /* Center align links */
+        padding: 8px; /* Sufficient padding for touch targets */
+    }
+
+    .container {
+        width: 95%; /* Allow more margin on smaller screens */
+        padding: 15px; /* Reduced padding */
+    }
+
+    h1, h2 {
+        font-size: 1.5rem; /* Adjust font size for smaller displays */
+    }
+
+    p, li {
+        font-size: 0.9rem; /* Adjust text size for readability */
+    }
+
+    .nav-toggle {
+        display: block; /* Show toggle in mobile view */
+    }
+
+    .nav-toggle-label {
+        display: block; /* Show label for toggling nav */
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        z-index: 2000;
+    }
+
+    .nav-toggle-label span {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin-bottom: 5px;
+        transition: all 0.3s;
+    }
+
+    .nav-toggle:checked + .nav-list {
+        display: flex; /* Show navigation when toggle is checked */
+    }
+
+    .nav-list {
+        position: absolute;
+        top: 3rem; /* Adjust based on navbar height */
+        left: 0;
+        background-color: #000000;
+        z-index: 1000;
+    }
+}
+
+/* Blog Navigation Styles */
+.blog-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.prev-blog,
+.next-blog {
+    color: #3498DB;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.prev-blog:hover,
+.next-blog:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .blog-navigation {
+        flex-direction: column;
+    }
+
+    .prev-blog,
+    .next-blog {
+        margin-top: 10px;
+    }
+}
